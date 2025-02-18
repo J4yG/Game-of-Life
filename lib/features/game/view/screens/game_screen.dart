@@ -46,20 +46,21 @@ class GameScreen extends StatelessWidget {
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "Itteration ${state is GridChanged ? state.iteration : 0}",
+                        "Moves: ${state is GridChanged ? state.iteration : 0}",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20),
                       ),
                     ),
+                    SizedBox(),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        "Speed: 1x",
+                        "Speed: ${state is GridChanged ? state.speed : 1}",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20),
                       ),

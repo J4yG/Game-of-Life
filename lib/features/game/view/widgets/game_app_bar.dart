@@ -23,7 +23,7 @@ class GameAppBar extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.save),
             iconSize: 32,
-            onPressed: () {},
+            onPressed: null,
           ),
           IconButton(
             icon: Icon(Icons.clear),
@@ -36,12 +36,14 @@ class GameAppBar extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.speed),
             iconSize: 32,
-            onPressed: () {},
+            onPressed: () {
+              context.read<GridCubit>().toggleSpeed();
+            },
           ),
           IconButton(
             icon: Icon(Icons.settings),
             iconSize: 32,
-            onPressed: () {},
+            onPressed: null,
           ),
         ],
       ),
