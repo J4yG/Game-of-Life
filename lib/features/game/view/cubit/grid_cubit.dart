@@ -16,14 +16,15 @@ class GridCubit extends Cubit<GridState> {
         ));
   List<bool> _grid = List.generate(150, (index) => false);
   int _iteration = 0;
-  late Timer? _timer;
+  Timer? _timer;
 
   void toggleCell(int index) {
     _grid[index] = !_grid[index];
+    _iteration = 0;
     emit(GridChanged(
       grid: _grid,
       changed: index,
-      isPlaying: _timer?.isActive ?? false,
+      isPlaying: _timer != null ? _timer?.isActive ?? false : false,
       iteration: _iteration,
     ));
   }
